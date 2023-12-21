@@ -3,6 +3,7 @@ package egd.covid.persistence.component.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import egd.covid.persistence.component.PersonaEntityManager;
@@ -20,6 +21,9 @@ public class PersonaEntityManagerImpl extends StaticValuesHelper implements Pers
 
 	@PersistenceContext
 	private EntityManager em;
+	
+	@Value("${MAX_QUERY_RESULTS}")
+	private int maxQueryResults;
 
 	@Override
 	public List<Persona> test(String nombre) {
@@ -63,6 +67,6 @@ public class PersonaEntityManagerImpl extends StaticValuesHelper implements Pers
 
 		criteria.select(root).where(predicateArray);
 
-		return em.createQuery(criteria).getResultList();
+		return em.createQuery(criteria).setMaxResults(maxQueryResults).getResultList();
 	}
 }
