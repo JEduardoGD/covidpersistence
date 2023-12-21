@@ -18,4 +18,10 @@ public abstract class StaticValuesHelper {
 	
 	protected static final String MEXICANA = "MEXICANA";
 	protected static final String EXTRANJERO = "EXTRANJERO";
+	
+	protected static final String EMPTY_STRING = "";
+	
+	protected static final String NOMBRE_FIELD = "nombre";
+	protected static final String PRIMER_APELLIDO_FIELD = "primerApellido";
+	protected static final String SEGUNDO_APELLIDO_FIELD = "segundoApellido";
 }
