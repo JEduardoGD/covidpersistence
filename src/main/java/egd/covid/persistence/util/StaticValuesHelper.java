@@ -29,4 +29,6 @@ public abstract class StaticValuesHelper {
 	
 	protected static final String HR_DATE = "d-MMMM-yyyy";
 	
+	protected static final String DDMMYYYY = "dd/MM/yyyy";
+	
 }
