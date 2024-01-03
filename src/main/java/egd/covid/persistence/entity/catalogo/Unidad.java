@@ -4,9 +4,12 @@ import java.io.Serializable;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,13 +27,14 @@ public class Unidad implements Serializable {
 	@Column(name = "IDUNIDAD")
 	private Long id;
 	
-	@Column(name="CLAVEMUN")
-	private Long clavemun;
-	
 	@Column(name = "UNIDAD")
 	private String unidad;
 	
 	@Column(name = "CLAVE")
-	private Long clave;
+	private String clave;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "IDENTIDAD")
+	private Entidad entidad;
 
 }
