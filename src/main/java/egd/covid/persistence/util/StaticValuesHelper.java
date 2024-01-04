@@ -17,6 +17,7 @@ public abstract class StaticValuesHelper {
 	
 	protected static final String SI = "SI";
 	protected static final String NO = "NO";
+	protected static final String SE_IGNORA = "SE IGNORA";
 	
 	protected static final String MEXICANA = "MEXICANA";
 	protected static final String EXTRANJERO = "EXTRANJERO";

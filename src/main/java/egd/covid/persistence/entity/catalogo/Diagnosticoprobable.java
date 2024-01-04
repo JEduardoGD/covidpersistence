@@ -13,17 +13,16 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "C_SERVICIO")
+@Table(name = "C_DIAGNOSTICOPROBABLE")
 @NoArgsConstructor
-public class Servicio implements Serializable {
-
-	private static final long serialVersionUID = 1757569553679415130L;
+public class Diagnosticoprobable implements Serializable {
+	private static final long serialVersionUID = 7410432581433583661L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "IDSERVICIO")
+	@Column(name = "IDDIAGNOSTICOPROBABLE")
 	private Long id;
 
-	@Column(name = "SERVICIO")
-	private String servicio;
+	@Column(name = "DIAGNOSTICOPROBABLE")
+	private String diagnostico;
 }

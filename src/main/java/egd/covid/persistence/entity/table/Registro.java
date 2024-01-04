@@ -4,8 +4,10 @@ import java.io.Serializable;
 import java.util.Date;
 
 import egd.covid.persistence.entity.catalogo.Delegacion;
+import egd.covid.persistence.entity.catalogo.Diagnosticoprobable;
 import egd.covid.persistence.entity.catalogo.Entidad;
 import egd.covid.persistence.entity.catalogo.Evolucion;
+import egd.covid.persistence.entity.catalogo.Medico;
 import egd.covid.persistence.entity.catalogo.Servicio;
 import egd.covid.persistence.entity.catalogo.TipoPaciente;
 import egd.covid.persistence.entity.catalogo.Unidad;
@@ -74,4 +76,12 @@ public class Registro implements Serializable {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "IDSERVICIO")
 	private Servicio servicio;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "IDDIAGNOSTICOPROBABLE")
+	private Diagnosticoprobable diagnosticoprobable;
+	
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "IDMEDICO")
+	private Medico medico;
 }
