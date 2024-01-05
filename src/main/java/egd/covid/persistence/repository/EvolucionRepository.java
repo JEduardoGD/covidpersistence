@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import egd.covid.persistence.entity.catalogo.Evolucion;
 
 @Repository
-public interface EvolucionRepository extends JpaRepository<Evolucion, Integer> {
+public interface EvolucionRepository extends JpaRepository<Evolucion, Long> {
 
 }
